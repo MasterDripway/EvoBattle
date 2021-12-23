@@ -41,13 +41,10 @@ class dummy:
     @final
     def take_dmg(self, dmg, opAccuracy=0) -> None:
         dodge_pct = self.agi - opAccuracy
-        print(dodge_pct, self.name)
         if dodge_pct < 0 and random.random() > dodge_pct:
             if random.random() < opAccuracy:  # crit
-                print("dmg1 ", dmg, self.name)
                 dmg += round(dmg * self.crit_percent)
-                print("dmg2 ", dmg, self.name)
             self.hp -= dmg
 
     def processTurn(self, turn_no) -> int:
-        return random.randint(1,3)
+        return random.randint(1, 3)
