@@ -1,5 +1,4 @@
 from dummy import dummy
-import numpy as np
 
 
 class tank(dummy):
@@ -27,4 +26,4 @@ class tank(dummy):
             return 2
         if self.hp <= 25:
             self.probs = [0.3, 0.5, 0.2]
-            return np.random.choice(3, 1, p=self.probs)[0] + 1
+            return self.getprob(pl=self.probs)

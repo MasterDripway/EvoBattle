@@ -1,6 +1,6 @@
 import random
 from typing import final
-
+import numpy as np
 
 class dummy:
     def __init__(self) -> None:
@@ -48,3 +48,11 @@ class dummy:
 
     def processTurn(self, turn_no) -> int:
         return random.randint(1, 3)
+    
+    def getprob(self, pl : list):
+        #returns the index of the highest probability attack
+        return np.random.choice(3, 1, p=self.probs)[0] + 1
+
+
+
+
