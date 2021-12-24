@@ -6,12 +6,14 @@ import importlib
 
 
 def main():
-    p1 = input("Player 1 class name:")
+    p1 = "tank"
     ch1 = getattr(importlib.import_module("assets." + p1), p1)()
-    p2 = input("Player 2 class name:")
+    p2 = "dummy"
     ch2 = getattr(importlib.import_module("assets." + p2), p2)()
 
-    battle(ch1, ch2)
-    input('press enter to exit')
+    battle(ch1, ch2).start()
 
-main()
+if __name__ == "__main__":
+    for x in range(100):
+        print(x)
+        main()
