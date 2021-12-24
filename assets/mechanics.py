@@ -111,8 +111,6 @@ class battle:
     def start(self) -> None:
         while (self.p1.is_alive() and self.p2.is_alive()):
             actions = self.turn.processTurn()
-            print('[bold cyan1]Press enter for next turn:[/bold cyan1]')
-            input()
             self.turn.info(actions)
 
 
