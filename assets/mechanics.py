@@ -1,8 +1,8 @@
 from rich import print
 
 # assets imports
-from dummy import dummy
-from tank import tank
+from .dummy import dummy
+from .tank import tank
 
 
 import random
@@ -115,4 +115,6 @@ class battle:
             input()
             self.turn.info(actions)
 
-battle(dummy(), tank()).start()
+
+if __name__ == "__main__":
+    battle(dummy(), tank()).start()

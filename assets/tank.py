@@ -1,4 +1,4 @@
-from dummy import dummy
+from .dummy import dummy
 
 
 class tank(dummy):

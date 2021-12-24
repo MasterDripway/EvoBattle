@@ -52,6 +52,14 @@ class dummy:
     def getprob(self, pl : list):
         #returns the index of the highest probability attack
         return np.random.choice(3, 1, p=self.probs)[0] + 1
+    
+    def __str__(self):
+        #return all stats
+        return f"{self.name}:\nHP: {self.hp}\nDMG: {self.dmg}\nDEF: {self.defc}\nAGI: {self.agi}\nACC: {self.acc}\n"
+    
+    def __repr__(self) -> str:
+        # print all stats
+        return f"{self.name}:\nHP: {self.hp}\nDMG: {self.dmg}\nDEF: {self.defc}\nAGI: {self.agi}\nACC: {self.acc}\n"
 
 
 
