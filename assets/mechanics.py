@@ -30,46 +30,46 @@ class turn:
                 match q2:
                     case 1:
                         # both attack, each one takes damage
-                        self.p2.take_dmg(self.p1.dmg - self.p2.defc, self.p1.acc)
-                        self.p1.take_dmg(self.p2.dmg - self.p1.defc, self.p2.acc)
+                        self.p2.take_dmg(self.p1.dmg - self.p2.defc, self.p1.acc, self.p1.crit_percent)
+                        self.p1.take_dmg(self.p2.dmg - self.p1.defc, self.p2.acc, self.p2.crit_percent)
 
                     case 2:
                         # p1 attacks, p2 defends
                         # If a player defends an attack, the attacker takes half attack damage
-                        self.p1.take_dmg((self.p2.dmg - self.p1.defc) // 2, self.p2.acc)
+                        self.p1.take_dmg((self.p2.dmg - self.p1.defc) // 2, self.p2.acc, self.p2.crit_percent)
 
                     case 3:
                         # p1 attacks, p2 surrounds
                         # if a player attacks and the other surrounds, the one surrounding takes damage
-                        self.p2.take_dmg(self.p1.dmg - self.p2.defc, self.p1.acc)
+                        self.p2.take_dmg(self.p1.dmg - self.p2.defc, self.p1.acc, self.p1.crit_percent)
             case 2:
                 match q2:
                     case 1:
                         # p1 defends, p2 attacks
                         # if a player defends an attack, the attacker takes half attack damage
-                        self.p2.take_dmg((self.p1.dmg - self.p2.defc) // 2, self.p1.acc)
+                        self.p2.take_dmg((self.p1.dmg - self.p2.defc) // 2, self.p1.acc, self.p1.crit_percent)
                     
                     case 3:
                         # p1 defends, p2 surrounds
                         # if a player defends and the other surrounds, the one defending takes damage
-                        self.p1.take_dmg(self.p2.dmg - self.p1.defc, self.p2.acc)
+                        self.p1.take_dmg(self.p2.dmg - self.p1.defc, self.p2.acc, self.p2.crit_percent)
             case 3:
                 match q2:
                     case 1:
                         # p1 surrounds, p2 attacks
                         # if a player surrounds an attack, the surrounding player takes damage
-                        self.p1.take_dmg(self.p2.dmg - self.p1.defc, self.p2.acc)
+                        self.p1.take_dmg(self.p2.dmg - self.p1.defc, self.p2.acc, self.p2.crit_percent)
                     
                     case 2:
                         # p1 surrounds, p2 defends
                         # if a player surrounds a defend, the defending takes damage
-                        self.p2.take_dmg(self.p1.dmg - self.p2.defc, self.p1.acc)
+                        self.p2.take_dmg(self.p1.dmg - self.p2.defc, self.p1.acc, self.p1.crit_percent)
                     
                     case 3:
                         # p1 surrounds, p2 surrounds
                         # if both surround, both take half damage
-                        self.p1.take_dmg((self.p2.dmg - self.p1.defc) // 2, self.p2.acc)
-                        self.p2.take_dmg((self.p1.dmg - self.p2.defc) // 2, self.p1.acc)
+                        self.p1.take_dmg((self.p2.dmg - self.p1.defc) // 2, self.p2.acc, self.p2.crit_percent)
+                        self.p2.take_dmg((self.p1.dmg - self.p2.defc) // 2, self.p1.acc, self.p1.crit_percent)
         self.turn += 1
         self.p1.last_op = q2
         self.p2.last_op = q1
