@@ -24,6 +24,6 @@ class tank(dummy):
             return 1
         elif self.last_op == 3:
             return 2
-        if self.hp <= 25:
+        if self.hp <= 100:
             self.probs = [0.3, 0.5, 0.2]
             return self.getprob(pl=self.probs)

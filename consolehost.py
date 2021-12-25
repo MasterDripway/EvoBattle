@@ -14,6 +14,4 @@ def main():
     battle(ch1, ch2).start()
 
 if __name__ == "__main__":
-    for x in range(100):
-        print(x)
-        main()
+    main()

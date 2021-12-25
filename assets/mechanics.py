@@ -112,6 +112,7 @@ class battle:
         while (self.p1.is_alive() and self.p2.is_alive()):
             actions = self.turn.processTurn()
             self.turn.info(actions)
+            input("Enter for next turn")
 
 
 if __name__ == "__main__":
