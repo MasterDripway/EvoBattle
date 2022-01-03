@@ -1,6 +1,5 @@
 package main.assets;
 
-import java.awt.*;
 import javax.swing.*;
 
 public class ui extends JFrame {
