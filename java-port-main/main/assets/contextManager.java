@@ -1,6 +1,5 @@
 package main.assets;
 
-import main.assets.scrollTextBar;
 
 
 public class contextManager {
