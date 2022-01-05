@@ -1,11 +1,15 @@
 package main;
 
+import main.assets.contextManager;
+import main.assets.ui;
+
 class match {
     dummy player1;
     dummy player2;
     int turn = 0;
     int player1_action = 0;
     int player2_action = 0;
+    contextManager ctx;
 
     /*
      * TODO:
@@ -45,6 +49,18 @@ class match {
             System.out.println("Turn " + turn + "\n");
             System.out.println(player1.toString() + " " + "ACTION: " + player1.getAbility(player1_action));
             System.out.println(player2.toString() + " " + "ACTION: " + player2.getAbility(player2_action) + "\n");
+            /*
+            FIXME:
+            this is where the ui will be passed in information to be displayed.
+            create a method of the future class that will container the scrollable text.
+            
+            */
+            if (this != null) {
+                this.ctx.addText("Turn " + turn + "\n");
+                this.ctx.addText(player1.toString() + " " + "ACTION: " + player1.getAbility(player1_action) + "\n");
+                this.ctx.addText(player2.toString() + " " + "ACTION: " + player2.getAbility(player2_action) + "\n");
+            }  
+
         }
 
         // checking which player died
@@ -55,5 +71,11 @@ class match {
         } else {
             return 0;
         }
+
+
+
+    }
+    public void bindUIAgent(contextManager ctx) {
+        this.ctx = ctx;
     }
 }
