@@ -9,7 +9,7 @@ class Main {
         
         dummy_sub d1 = new dummy_sub(100, 1, 10, 0.15f, 0.25f);
         dummy_sub d2 = new dummy_sub();
-        match m = new match(d1, d2);
+        match m = new match(d1, d2); // change agents above for custom matches
         ui agent = new ui();
         m.bindUIAgent(agent.ctx);
         m.start();

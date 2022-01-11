@@ -54,7 +54,7 @@ class match {
             create a method of the future class that will container the scrollable text.
             
             */
-            if (this != null) {
+            if (this.ctx != null) {
                 this.ctx.addText("Turn " + turn + "\n");
                 this.ctx.addText(player1.toString() + " " + "ACTION: " + player1.getAbility(player1_action) + "\n");
                 this.ctx.addText(player2.toString() + " " + "ACTION: " + player2.getAbility(player2_action) + "\n");
